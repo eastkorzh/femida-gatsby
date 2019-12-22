@@ -18,14 +18,13 @@
   .item {
     display: flex;
     align-items: center;
-    max-width: 480px;
     margin: 10px 35px 10px 0;
-    .img {
+    div {
+      max-width: 420px;
+    }
+    img {
       height: 57px;
       margin-right: 20px;
-      img {
-        height: 100%;
-      }
     }
     &:last-child {
       margin-right: 0;

@@ -10,7 +10,7 @@ const HeaderBar = (props) => {
   const { fixed, location } = props;
 
   const data = useStaticQuery(graphql`
-    query MyQuery1 {
+    query HeaderBarQuery {
       allStrapiLandings {
         edges {
           node {
@@ -78,40 +78,36 @@ const HeaderBar = (props) => {
               <a href="#contacts">Контакты</a>
             </> :
             <>
-              <Link to={{
-                pathname: '/',
-                hash: '#services',
-                state: {
+              <Link 
+                to='/'
+                state={{
                   scrollTo: 'services'
-                }
-              }}>
+                }}
+              >
                 Услуги
               </Link>
-              <Link to={{
-                pathname: '/',
-                hash: '#advantages',
-                state: {
+              <Link 
+                to='/'
+                state={{
                   scrollTo: 'advantages'
-                }
-              }}>
+                }}
+              >
                 Приемущества
               </Link>
-              <Link to={{
-                pathname: '/',
-                hash: '#faq',
-                state: {
+              <Link 
+                to='/'
+                state={{
                   scrollTo: 'faq'
-                }
-              }}>
+                }}
+              >
                 Вопрос-ответ
               </Link>
-              <Link to={{
-                pathname: '/',
-                hash: '#contacts',
-                state: {
+              <Link 
+                to='/'
+                state={{
                   scrollTo: 'contacts'
-                }
-              }}>
+                }}
+              >
                 Контакты
               </Link>
             </>
@@ -154,40 +150,36 @@ const HeaderBar = (props) => {
                     <a href="#contacts">Контакты</a>
                   </> :
                   <>
-                    <Link to={{
-                      pathname: '/',
-                      hash: '#services',
-                      state: {
+                    <Link 
+                      to='/'
+                      state={{
                         scrollTo: 'services'
-                      }
-                    }}>
+                      }}
+                    >
                       Услуги
                     </Link>
-                    <Link to={{
-                      pathname: '/',
-                      hash: '#advantages',
-                      state: {
+                    <Link 
+                      to='/'
+                      state={{
                         scrollTo: 'advantages'
-                      }
-                    }}>
+                      }}
+                    >
                       Приемущества
                     </Link>
-                    <Link to={{
-                      pathname: '/',
-                      hash: '#faq',
-                      state: {
+                    <Link 
+                      to='/'
+                      state={{
                         scrollTo: 'faq'
-                      }
-                    }}>
+                      }}
+                    >
                       Вопрос-ответ
                     </Link>
-                    <Link to={{
-                      pathname: '/',
-                      hash: '#contacts',
-                      state: {
+                    <Link 
+                      to='/'
+                      state={{
                         scrollTo: 'contacts'
-                      }
-                    }}>
+                      }}
+                    >
                       Контакты
                     </Link>
                   </>

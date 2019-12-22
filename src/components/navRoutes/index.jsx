@@ -7,14 +7,13 @@ const NavRoutes = (props) => {
   const { currentNavName } = props;
   return (
     <div className={s.container}>
-      <Link to={{
-        pathname: '/',
-        hash: '#services',
-        state: { 
+      <Link
+        to='/'
+        state={{
           fromServices: true,
           scrollTo: 'services'
-        }
-      }}>
+        }}
+      >
         Услуги
       </Link>
       <div>/</div>

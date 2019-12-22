@@ -3,14 +3,17 @@ import React from 'react';
 import s from './styles.module.scss';
 
 const CostsAndFeesList = (props) => {
-  const { data } = props;
+  const { 
+    costsList,
+    feesList,
+  } = props;
 
   return (
     <div id='costsList' className={s.container}>
       <h3>Стоимость услуг</h3>
       <div className={s.costsWrapper}>
         <div className={s.costsList}>
-          {(data && data.costsList) && data.costsList.map((item, index) => {
+          {costsList && costsList.map((item, index) => {
             return (
               <div key={index} className={s.item}>
                 <div className={s.name}>{item.name}</div>
@@ -29,11 +32,11 @@ const CostsAndFeesList = (props) => {
             )
           })}
         </div>
-        {(data && data.feesList) && 
+        {feesList && 
           <h3>Госпошлина</h3>
         }
         <div className={s.feesList}>
-          {(data && data.feesList) && data.feesList.map((item, index) => {
+          {feesList && feesList.map((item, index) => {
             return (
               <div key={index} className={s.item}>
                 <div className={s.name}>{item.name}</div>

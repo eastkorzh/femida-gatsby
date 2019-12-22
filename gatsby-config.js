@@ -34,7 +34,17 @@ module.exports = {
       options: {
         apiURL: `http://cms.femidamurino.ru`,
         queryLimit: 1000, // Default to 100
-        contentTypes: [`ndfls`, `courts`, `landings`,],
+        contentTypes: [
+          `ndfls`, 
+          `courts`, 
+          `landings`,
+          `deedofgifts`,
+          `accountings`,
+          `buysales`,
+          `claims`,
+          `mfcs`,
+          `registerandliquidation`,
+        ],
         // Possibility to login with a strapi user, when content types are not publically available (optional).
         loginData: {
           identifier: "",

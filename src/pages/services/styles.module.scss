@@ -1,0 +1,13 @@
+.container {
+  .headerBarWrapper {
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    padding: 15px;
+  }
+  .content {
+    max-width: 990px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+  }
+}
