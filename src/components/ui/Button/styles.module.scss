@@ -1,0 +1,17 @@
+.btn {
+  background: linear-gradient(106.34deg, #E6B980 9.27%, #EACDA3 71.1%);
+  border-radius: 21px;
+  letter-spacing: 0.3px;
+  color: white;
+  font-size: 18px;
+  line-height: 21px;
+  height: 42px;
+  padding: 0px 21px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: box-shadow .2s;
+  &:hover {
+    box-shadow: 0 6px 12px 0 rgba(234,205,163, 0.44);
+  }
+}

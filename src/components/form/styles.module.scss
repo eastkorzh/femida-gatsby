@@ -1,0 +1,33 @@
+form {
+  .input {
+    margin-top: 10px;
+  }
+  .textarea {
+    margin-top: 10px;
+    input {
+      height: 110px;
+    }
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  .btnCustom {
+    border-radius: 9px;
+    height: 40px;
+    text-transform: unset;
+  }
+  .text {
+    font-size: 14px;
+    color: #B3B3B3;
+    max-width: 230px;
+    margin-left: 15px;
+  }
+}
+
+.error {
+  color: rgb(233, 38, 38);
+  margin-top: 13px;
+}

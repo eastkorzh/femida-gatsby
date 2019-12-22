@@ -1,0 +1,49 @@
+$black: #212226;
+$grey: #a0a0a0;
+$red: #e53333;
+
+.form__input {
+  position: relative;
+  width: 100%;
+  border-radius: 7px;
+  img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+  }
+  input {
+    font-size: 16px;
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 2px solid #E6B980;
+    padding-left: 55px;
+    outline: none;
+    color: #6a6a66;
+    background: transparent;
+    &:focus {
+      border-color: $black;
+    }
+    &:focus ~ label,
+    &:valid ~ label {
+      top: -7px;
+      font-size: 12px;
+      color: #3a3a3a;
+      background: #fff;
+    }
+  }
+  label {
+    color: #B3B3B3;
+    background: transparent;
+    padding: 0 5px;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 47px;
+    top: 13px;
+    transition: .2s ease all;
+  }
+}

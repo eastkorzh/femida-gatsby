@@ -1,0 +1,35 @@
+.bottom {
+  height: 60px;
+  width: 100%;
+  background: #E6B980;
+  margin-top: 78px;
+  padding: 0 15px;
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1170px;
+    height: 100%;
+    margin: 0 auto;
+    div {
+      color: white;
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bottom {
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .bottom {
+    .content {
+      div {
+        font-size: 12px;
+      }
+    }
+  }
+}

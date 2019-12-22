@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,500,700|Roboto:300,400,500,700,900&display=swap&subset=cyrillic');
+@import url('./rest.css');
+
+* {
+  font-family: 'Roboto', sans-serif;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #585858;
+  scroll-behavior: smooth;
+  --scroll-behavior: smooth;
+}
+
+*:focus {
+  outline-style: none;
+}
+
+*::selection {
+  background: #e2d1c3;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: normal;
+}
+
+h2 {
+  text-align: center;
+}

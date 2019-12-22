@@ -1,0 +1,66 @@
+@import './animations.scss';
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 70px 0;
+  h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .grid {
+    display: flex;
+    max-width: 1170px;
+    flex-wrap: wrap;
+    justify-content: center;
+    .link {
+      width: 150px;
+      margin: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        max-height: 100px;
+      }
+      div {
+        text-align: center;
+        color: #835F52;
+        font-size: 16px;
+        margin-top: 20px;
+        line-height: 19px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .section {
+    padding: 30px 0;
+    h2 {
+      font-size: 30px;
+    }
+    .grid {
+      .link {
+        margin: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .section {
+    .grid {
+      .link {
+        margin: 15px;
+        width: 120px;
+        img {
+          max-height: 80px;
+        }
+        div {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

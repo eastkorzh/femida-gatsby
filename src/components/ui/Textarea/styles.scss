@@ -1,0 +1,46 @@
+$black: #212226;
+$grey: #a0a0a0;
+$red: #e53333;
+
+.form__textarea {
+  position: relative;
+  width: 100%;
+  img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+  }
+  textarea {
+    //height: 40px;
+    padding: 7px 17px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 2px solid #E6B980;
+    outline: none;
+    color: #6a6a66;
+    font-size: 16px;
+    &:focus {
+      border-color: $black;
+    }
+    &:focus ~ label,
+    &:valid ~ label {
+      top: -7px;
+      font-size: 12px;
+      color: #3a3a3a;
+    }
+  }
+  label {
+    color: #B3B3B3;
+    background: #fff;
+    padding: 0 5px;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 15px;
+    top: 13px;
+    transition: .2s ease all;
+  }
+}

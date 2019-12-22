@@ -1,0 +1,33 @@
+.container {
+  max-width: 500px;
+  border-radius: 14px;
+  border: 2px solid #E6B980;
+  padding: 20px 20px;
+  margin: 60px auto 20px auto;
+  h4 {
+    font-size: 36px;
+    font-family: 'Roboto', sans-serif;
+  }
+  .info {
+    font-size: 14px;
+    margin: 15px 0 25px;
+    line-height: 1.3;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    margin-top: 30px;
+    h4 {
+      font-size: 28px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    h4 {
+      font-size: 22px;
+    }
+  }
+}
