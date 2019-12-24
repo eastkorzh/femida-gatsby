@@ -9,8 +9,6 @@
   padding: 0;
   box-sizing: border-box;
   color: #585858;
-  scroll-behavior: smooth;
-  --scroll-behavior: smooth;
 }
 
 *:focus {

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from "react-helmet"
 
 import Header from 'src/components/landing/header';
 import Services from 'src/components/landing/services';
@@ -23,16 +24,24 @@ const Landing = ({ data, location }) => {
   } = data.allStrapiLandings.edges[0].node;
 
   useEffect(() => {
+    if (location.action !=='PUSH') return;
     const state = location.state;
     
     if (state && state.scrollTo) {
-      const top = document.getElementById(state.scrollTo).offsetTop;
-      window.scrollTo({ top: top - 50, behavior: 'instant'})
+      const topp = document.getElementById(state.scrollTo).offsetTop;
+      
+      //setTimout prevent autoumatic scroll top provided by Gatsby
+      setTimeout(() => {
+        window.scrollTo({ top: topp - 50})
+      }, 1)
     }
   }, [location.state])
 
   return (
     <>
+      <Helmet>
+        <title>Фемида: юридический центр</title>
+      </Helmet>
       <Header h1={h1} h2={h2} location={location}/>
       <Services />
       <Advantages 

@@ -9,12 +9,6 @@ import s from './styles.module.scss';
 const Service = (props) => {
   const { children, location } = props;
 
-  useEffect(() => {
-    if (location.action === 'PUSH') {
-      window.scrollTo({ top: 0, behavior: 'instant'});
-    }
-  }, [location.action])
-
   return (
     <div className={s.container}>
       <div className={s.headerBarWrapper}>

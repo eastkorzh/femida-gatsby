@@ -42,6 +42,13 @@ const HeaderBar = (props) => {
     },
   };
 
+  const scrollTo = (id, addHeight = 0, behavior = 'smooth') => {
+    if (window) {
+      const top = document.getElementById(id).offsetTop;
+      window.scrollTo({ top: top - addHeight, behavior });
+    }
+  }
+
   return (
     <div className={s.headerBar}>
       <div style={fixed ? {padding: 0} : {}} className={s.content} >
@@ -72,10 +79,42 @@ const HeaderBar = (props) => {
           <nav>
           {location.pathname === '/' ?
             <>
-              <a href="#services">Услуги</a>
-              <a href="#advantages">Приемущества</a>
-              <a href="#faq">Вопрос-ответ</a>
-              <a href="#contacts">Контакты</a>
+              <a 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo('services', 50)
+                }} 
+                href="#services"
+              >
+                Услуги
+              </a>
+              <a 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo('advantages', 50)
+                }} 
+                href="#advantages"
+              >
+                Приемущества
+              </a>
+              <a 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo('faq', 50)
+                }} 
+                href="#faq"
+              >
+                Вопрос-ответ
+              </a>
+              <a 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo('contacts', 50)
+                }}                 
+                href="#contacts"
+              >
+                Контакты
+              </a>
             </> :
             <>
               <Link 
@@ -144,10 +183,42 @@ const HeaderBar = (props) => {
                 <nav onClick={() => setOpen(false)}>
                   {location.pathname === '/' ?
                   <>
-                    <a href="#services">Услуги</a>
-                    <a href="#advantages">Приемущества</a>
-                    <a href="#faq">Вопрос-ответ</a>
-                    <a href="#contacts">Контакты</a>
+                    <a 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollTo('services', 50)
+                      }} 
+                      href="#services"
+                    >
+                      Услуги
+                    </a>
+                    <a 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollTo('advantages', 50)
+                      }} 
+                      href="#advantages"
+                    >
+                      Приемущества
+                    </a>
+                    <a 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollTo('faq', 50)
+                      }} 
+                      href="#faq"
+                    >
+                      Вопрос-ответ
+                    </a>
+                    <a 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollTo('contacts', 50)
+                      }}                 
+                      href="#contacts"
+                    >
+                      Контакты
+                    </a>
                   </> :
                   <>
                     <Link 
