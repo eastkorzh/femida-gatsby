@@ -6,21 +6,18 @@ import About from "src/components/about";
 import Info from 'src/components/info';
 import Documents from 'src/components/documents';
 import CostsAndFeesList from 'src/components/costsAndFeesList';
-import Roadmap from 'src/components/roadmap';
+//import Roadmap from 'src/components/roadmap';
 
-const DeedOfGift = ({ data, location }) => {
+const BuySales = ({ data, location }) => {
   const { 
     h2,
     p,
     info,
     documentList,
-    documentList2,
     costsList,
     feesList,
-    documentsDelimiter,
-    h3,
-    stepsList,
-  } = data.allStrapiDeedofgifts.edges[0].node;
+  } = data.allStrapiBuysales.edges[0].node;
+
   return (
     <Service location={location}>
       <NavRouter currentNavName={h2} />
@@ -36,49 +33,36 @@ const DeedOfGift = ({ data, location }) => {
       </Info>
       <Documents 
         documentList={documentList}
-        documentsDelimiter={documentsDelimiter}
-        documentList2={documentList2}
       />
       <CostsAndFeesList 
         costsList={costsList}
         feesList={feesList}
       />
-      <Roadmap h3={h3} stepsList={stepsList} />
     </Service>
   )
 }
 
-export default DeedOfGift;
+export default BuySales;
 
 export const pageQuery = graphql`
-  query deedOfGift {
-    allStrapiDeedofgifts {
+  query buySalesQuery {
+    allStrapiBuysales {
       edges {
         node {
           h2
           p
           info
-          documentList {
-            name
-            type
-          }
-          documentList2 {
-            name
-            ifNext
-          }
-          documentsDelimiter
           costsList {
             name
             price
-            oldPrice
           }
           feesList {
             name
             price
           }
-          h3
-          stepsList {
+          documentList {
             name
+            type
           }
         }
       }

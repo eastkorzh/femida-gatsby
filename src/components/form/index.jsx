@@ -31,8 +31,13 @@ const Form = (props) => {
   });
 
   const [ submitClicked, setSubmitClicked ] = useState(false);
+  const [ isTouchDevice, setTouchDevice ] = useState(true);
 
   const { ref, proximity } = useProximityFeedback({ threshold: 200, throttleInMs: 50})
+
+  useEffect(() => {
+    setTouchDevice("ontouchstart" in document.documentElement || navigator.maxTouchPoints > 0);
+  }, [])
 
   useEffect(() => {
     if (data.name.length > 0) {
@@ -136,9 +141,11 @@ const Form = (props) => {
     }
   }
 
-  const redShadow = (isValid, proximity) => {
-    const isTouchDevice = "ontouchstart" in document.documentElement || navigator.maxTouchPoints > 0;
-    
+  useEffect(() => {
+
+  }, [])
+
+  const redShadow = (isValid, isTouchDevice, proximity) => {    
     if (!submitClicked) { 
       if (!isTouchDevice) {
         return {
@@ -159,7 +166,7 @@ const Form = (props) => {
           handleChange={handleChange} 
           value={data.name}
           className={s.input} 
-          proximityStyle={redShadow(isValid.name, proximity)}
+          proximityStyle={redShadow(isValid.name, isTouchDevice, proximity)}
           label='ФИО*' img='user' type='text' name='name' 
         />
         <Input 
@@ -172,7 +179,7 @@ const Form = (props) => {
           handleChange={handleChange} 
           value={data.phone}
           className={s.input} 
-          proximityStyle={redShadow(isValid.phone, proximity)}
+          proximityStyle={redShadow(isValid.phone, isTouchDevice, proximity)}
           label='Номер телефона*' img='phone' type='text' name='phone'
         />
         <Input 
