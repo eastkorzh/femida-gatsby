@@ -17,7 +17,7 @@ const Services = () => {
             <Link to='/services/buysales'>• Купли-продажи</Link>
           </div>
         </div>
-        <Link className={s.link} to="/services/3ndfl">
+        <Link className={s.link} to="/services/ndfl">
           <img src={require('src/img/icons/3ndfl.png')} alt=""/>
           <div>Составление деклараций 3НДФЛ</div>
         </Link>
@@ -33,7 +33,7 @@ const Services = () => {
           <img src={require('src/img/icons/editing.png')} alt=""/>
           <div>Внесение изменений в организации</div>
         </Link>
-        <Link className={s.link} to="/services/representation">
+        <Link className={s.link} to="/services/court">
           <img src={require('src/img/icons/representation.png')} alt=""/>
           <div>Представительство в судах</div>
         </Link>

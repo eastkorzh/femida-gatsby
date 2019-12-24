@@ -5,6 +5,9 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    .left {
+      max-width: 674px;
+    }
     h2 {
       font-family: 'Roboto', sans-serif;
       font-size: 36px;
@@ -50,8 +53,9 @@
     }
   
     .img {
-      height: 225px;
       margin-left: 50px;
+      max-width: 237px;
+      margin-top: 10px;
     }  
   }
 }
