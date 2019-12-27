@@ -3,6 +3,7 @@ import { Transition } from 'react-transition-group';
 import { Link } from 'gatsby';
 import { useStaticQuery, graphql } from "gatsby"
 
+import scrollTo from 'src/utils/scrollTo';
 import s from './styles.module.scss';
 
 
@@ -41,13 +42,6 @@ const HeaderBar = (props) => {
       opacity: 1,
     },
   };
-
-  const scrollTo = (id, addHeight = 0, behavior = 'smooth') => {
-    if (window) {
-      const top = document.getElementById(id).offsetTop;
-      window.scrollTo({ top: top - addHeight, behavior });
-    }
-  }
 
   return (
     <div className={s.headerBar}>

@@ -6,6 +6,7 @@
     transition: 400ms ease-in-out;
   }
   .info {
+    width: 200px;
     z-index: -1;
     margin-top: 0 !important;
     height: 100%;
@@ -15,7 +16,7 @@
     justify-content: flex-end;
     bottom: 10px;
     background: rgba(255, 255, 255, 0.8);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255, .8) 62%, rgba(255,255,255, .3) 100%);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255, .8) 80%, rgba(255,255,255, .3) 100%);
     
     opacity: 0;
     transform: translateY(70px);
@@ -33,6 +34,7 @@
 }
 
 .link:hover {
+  overflow: visible;
   img {
     transform: scale(0.97, 0.97);
   }

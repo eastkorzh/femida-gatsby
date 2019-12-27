@@ -1,34 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Transition } from 'react-transition-group';
 import Img from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby"
+import useStoreon from 'storeon/react';
 
 import HeaderBar from '../headerBar';
 import Button from 'src/components/ui/Button';
-import Form from 'src/components/form';
+import Modal from 'src/components/modal';
 
 import s from './styles.module.scss';
 import throttle from 'src/utils/throttle';
 
 const Header = ({ h1, h2, location }) => {
   const [ isNear, setNear ] = useState(true);
-  const [ isOpen, setOpen ] = useState(false);
-
-  const duration = 300;
-
-  const defaultStyle = {
-    transition: `opacity ${duration}ms ease-in-out`,
-    opacity: 0,
-  }
-
-  const transitionStyles = {
-    entering: { 
-      opacity: 1,
-    },
-    entered: { 
-      opacity: 1,
-    },
-  };
+  
+  const { dispatch } = useStoreon();
 
   const throttledHandleScroll = throttle(() => {
     if (window.pageYOffset + 200 > document.documentElement.clientHeight) {
@@ -59,6 +44,7 @@ const Header = ({ h1, h2, location }) => {
 
   return(
     <header className={s.header}>
+      <Modal />
       <div className={s.container}>
         <HeaderBar location={location} />
         {!isNear &&
@@ -72,7 +58,7 @@ const Header = ({ h1, h2, location }) => {
             <h2>{h2}</h2>
             <Button 
               onClick={() => {
-                setOpen(true);
+                dispatch('setModalOpen')
               }}  
               className={s.btnWrapper}
             >
@@ -88,36 +74,6 @@ const Header = ({ h1, h2, location }) => {
           </div>
         </div>
       </div>
-
-      <Transition 
-        in={isOpen} 
-        onEnter={node => node.offsetHeight} 
-        timeout={duration} 
-        mountOnEnter={true} 
-        unmountOnExit={true} 
-      >
-        {state => { 
-          return (
-          <div
-            id='formOutter'
-            onClick={(e) => {
-              if (e.target.id === 'formOutter') {
-                setOpen(false);
-              }
-            }}
-            style={{
-              ...defaultStyle,
-              ...transitionStyles[state]
-            }}
-            className={s.modal}
-          >
-            <div className={s.modalContent}>
-              <h4>Бесплатаня консультация</h4>
-              <Form />
-            </div>
-          </div>
-        )}}
-      </Transition>
     </header>
   )
 }

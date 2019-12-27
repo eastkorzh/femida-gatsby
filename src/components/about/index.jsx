@@ -1,5 +1,6 @@
 import React from 'react';
 
+import scrollTo from 'src/utils/scrollTo';
 import s from './styles.module.scss';
 
 const About = (props) => {
@@ -20,13 +21,27 @@ const About = (props) => {
           {
             <div className={s.navIcons}>
               {documentList &&
-                <a href='#documentList' className={s.item}>
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollTo('documentList');
+                  }} 
+                  href='#documentList' 
+                  className={s.item}
+                >
                   <img src={require('../../img/icons/blanks.png')} alt=""/>
                   <div>Список необходимых документов</div>
                 </a>
               }
               {costsList &&
-                <a href='#costsList' className={s.item}>
+                <a 
+                  onClick={(e) => {
+                    e.preventDefault()
+                    scrollTo('costsList');
+                  }} 
+                  href='#costsList' 
+                  className={s.item}
+                >
                   <img src={require('../../img/icons/ruble.svg')} alt=""/>
                   <div>Стоимость услуг</div>
                 </a>

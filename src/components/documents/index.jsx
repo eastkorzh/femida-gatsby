@@ -7,11 +7,13 @@ const Documents = (props) => {
     documentList,
     documentsDelimiter,
     documentList2,
+    h4,
    } = props;
 
   return (
     <div id='documentList' className={s.container}>
       <h3>Список необходимых документов</h3>
+      <div className={s.documentsDelimiter}>{h4}</div>
       <div className={s.documentList}>
         {documentList && documentList.map((item, index) => {
           const itemType = item.type && item.type.split('_')

@@ -25,9 +25,16 @@ let isSuccess = store => {
   })
 }
 
+let isModalOpen = store => {
+  store.on('@init', () => ({ isModalOpen: false, info: 'empty'}))
+  store.on('setModalOpen', ({ isModalOpen }, info ) => ({ isModalOpen: true, info }))
+  store.on('setModalClose', ({ isModalOpen }, info) => ({ isModalOpen: false, info }))
+}
+
 const store = createStore([
   increment, 
   isSuccess,
+  isModalOpen,
   process.env.NODE_ENV !== 'production' && require('storeon/devtools/logger'),
 ]);
 

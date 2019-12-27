@@ -12,7 +12,7 @@ const Services = () => {
           <img src={require('src/img/icons/newContract.png')} alt=""/>
           <div>Составление договоров</div>
           <div className={s.info}>
-            <div className={s.infoHeader}>Составление договоров</div>
+            <div className={s.infoHeader}>Составление <br /> договоров</div>
             <Link to='/services/deedofgift'>• Дарения</Link>
             <Link to='/services/buysales'>• Купли-продажи</Link>
           </div>
@@ -45,10 +45,17 @@ const Services = () => {
           <img src={require('src/img/icons/claim.png')} alt=""/>
           <div>Написание исков, заявлений, претензий</div>
         </Link>
-        <Link className={s.link} to="/services/calc">
+        <div className={s.link}>
           <img src={require('src/img/icons/calc.png')} alt=""/>
-          <div>Ведение бухгалтерии для ООО и ИП</div>
-        </Link>
+          <div>Ведение бухгалтерии</div>
+          <div className={s.info}>
+            <div className={s.infoHeader}>Ведение <br /> бухгалтерии</div>
+            <Link to='/services/accounting/ooo'>• Для ООО</Link>
+            <Link to='/services/accounting/ip'>• Для ИП</Link>
+            <Link to='/services/accounting/zeroreporting'>• Нулевая отчетность</Link>
+            <Link to='/services/accounting/envd'>• Декларация ЕНВД</Link>
+          </div>
+        </div>
         <Link className={s.link} to="/services/mfc">
           <img src={require('src/img/icons/mfc.png')} alt=""/>
           <div>Заполнение заявлений для подчи в МФЦ</div>
