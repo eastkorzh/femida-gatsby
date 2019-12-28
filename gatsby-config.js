@@ -32,7 +32,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `http://cms.femidamurino.ru`,
+        apiURL: `https://cms.femidamurino.ru`,
         queryLimit: 1000, // Default to 100
         contentTypes: [
           `ndfls`, 

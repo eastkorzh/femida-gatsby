@@ -104,7 +104,7 @@ const Form = (props) => {
 
     if (!allValid) return;
 
-    const response = await fetch('http://cms.femidamurino.ru/email', {
+    const response = await fetch('https://cms.femidamurino.ru/email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
