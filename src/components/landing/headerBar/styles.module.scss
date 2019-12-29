@@ -11,7 +11,7 @@
     .logo {
       display: flex;
       .imgWrapper {
-        max-width: 59px;
+        max-width: 55px;
         img {
           width: 100%;
         }
@@ -66,45 +66,6 @@
     }
     .burger {
       display: none;
-    }
-  }
-}
-
-.modal {
-  padding-top: 30px;
-  z-index: 999;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgb(226,209,195);
-  background: linear-gradient(180deg, rgba(226,209,195,1) 0%, 
-  rgba(226,209,195,1) 40%, rgba(255,255,255,0) 100%);
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    nav {
-      font-weight: 500;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      a {
-        line-height: 40px;
-        font-size: 20px;
-      }
-    }
-    .close {
-      width: 100%;
-      height: 50vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      img {
-        width: 50px;
-      }
     }
   }
 }
