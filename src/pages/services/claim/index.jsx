@@ -7,6 +7,7 @@ import About from "src/components/about";
 //import Documents from 'src/components/documents';
 import CostsAndFeesList from 'src/components/costsAndFeesList';
 //import Roadmap from 'src/components/roadmap';
+import { graphql } from "gatsby";
 
 const Claim = ({ data, location }) => {
   const { 

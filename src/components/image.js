@@ -12,6 +12,7 @@ import Img from "gatsby-image"
  * - `gatsby-image`: https://gatsby.dev/gatsby-image
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
+const a = 1;
 
 const Image = () => {
   const data = useStaticQuery(graphql`

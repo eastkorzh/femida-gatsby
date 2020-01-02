@@ -6,18 +6,21 @@ import About from "src/components/about";
 import Info from 'src/components/info';
 import Documents from 'src/components/documents';
 import CostsAndFeesList from 'src/components/costsAndFeesList';
-//import Roadmap from 'src/components/roadmap';
 import { graphql } from "gatsby";
 
-const BuySales = ({ data, location }) => {
+const Liquidation = ({ data, location }) => {
   const { 
     h2,
-    p,
     info,
-    documentList,
+    p,
+    //about,
+    docH3_1,
+    docH3_2,
     costsList,
     feesList,
-  } = data.allStrapiBuysales.edges[0].node;
+    documentList,
+    documentList2,
+  } = data.allStrapiLiquidations.edges[0].node;
 
   return (
     <Service location={location}>
@@ -25,46 +28,60 @@ const BuySales = ({ data, location }) => {
       <About 
         h2={h2}
         p={p}
-        imgName='newContract' 
-        documentList={documentList}
+        imgName='liquidation' 
         costsList={costsList}
+        documentList={documentList}
       />
       <Info>
-        <div dangerouslySetInnerHTML={{ __html: info}} />
-      </Info>
+        <div dangerouslySetInnerHTML={{ __html: (info)}} />
+      </Info>      
       <Documents 
+        h4={docH3_1}
         documentList={documentList}
+      />
+      <Documents 
+        h4={docH3_2}
+        documentList={documentList2}
+        disableH3={true}
       />
       <CostsAndFeesList 
         costsList={costsList}
         feesList={feesList}
+        disableH3={true}
       />
     </Service>
   )
 }
 
-export default BuySales;
+export default Liquidation;
 
 export const pageQuery = graphql`
-  query buySalesQuery {
-    allStrapiBuysales {
+  query liquidationQuery {
+    allStrapiLiquidations {
       edges {
         node {
-          h2
-          p
-          info
+          about
           costsList {
             name
             price
+          }
+          docH3_1
+          docH3_2
+          documentList {
+            name
+            type
+          }
+          documentList1 {
+            name
+            type
           }
           feesList {
             name
             price
           }
-          documentList {
-            name
-            type
-          }
+          h2
+          info
+          p
         }
       }
     }

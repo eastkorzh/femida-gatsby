@@ -5,6 +5,9 @@
   img {
     transition: 400ms ease-in-out;
   }
+  .text {
+    transition: color 500ms;
+  }
   .info {
     width: 200px;
     z-index: -1;
@@ -37,6 +40,9 @@
   overflow: visible;
   img {
     transform: scale(0.97, 0.97);
+  }
+  .text {
+    color: transparent !important;
   }
   .info {
     opacity: 1;

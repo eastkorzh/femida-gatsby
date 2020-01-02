@@ -9,6 +9,7 @@ import Subservices from 'src/components/subservices';
 //import CostsAndFeesList from 'src/components/costsAndFeesList';
 //import Roadmap from 'src/components/roadmap';
 import s from '../styles.module.scss';
+import { graphql } from "gatsby";
 
 const Accounting = ({ data, location }) => {
   const {

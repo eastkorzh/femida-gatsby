@@ -1,6 +1,12 @@
-{
-  "compilerOptions": {
-    "baseUrl": "/"
-  },
-  "include": ["/"]
-}
+// {
+//     "compilerOptions": {
+//         "target": "ES6",
+//         "baseUrl": "/src"
+//     },
+//     "exclude": [
+//         "node_modules",
+//         "**/node_modules/*",
+//         "public",
+//         ".cache",
+//     ]
+// }

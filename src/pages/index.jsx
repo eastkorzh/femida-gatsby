@@ -7,6 +7,7 @@ import Advantages from 'src/components/landing/advantages';
 import FAQ from 'src/components/landing/FAQ';
 import Footer from 'src/components/landing/footer';
 import FooterBar from 'src/components/footerBar';
+import { graphql } from "gatsby";
 
 import 'src/styles/index.css';
 

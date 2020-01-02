@@ -5,21 +5,20 @@ import NavRouter from 'src/components/navRoutes';
 import About from "src/components/about";
 import Info from 'src/components/info';
 import Documents from 'src/components/documents';
-//import CostsAndFeesList from 'src/components/costsAndFeesList';
+import CostsAndFeesList from 'src/components/costsAndFeesList';
 //import Roadmap from 'src/components/roadmap';
 import { graphql } from "gatsby";
 
-const Accounting = ({ data, location }) => {
+const Mfc = ({ data, location }) => {
   const {
     documentList1,
     documentList2,
     h2,
-    h3_1,
-    h3_2,
+    h3,
     info,
     p,
-    //subservices,
-  } = data.allStrapiAccountings.edges[2].node;
+    costsList,
+  } = data.allStrapiMfcs.edges[0].node;
 
   return (
     <Service location={location}>
@@ -27,27 +26,28 @@ const Accounting = ({ data, location }) => {
       <About 
         h2={h2}
         p={p}
-        imgName='calc' 
+        imgName='mfc' 
         documentList={documentList1}
       />
       <Info>
         <div dangerouslySetInnerHTML={{ __html: info}} />
       </Info>
-      <Documents 
-        h4={h3_1}
+      <Documents
         documentList={documentList1}
-        documentsDelimiter={h3_2}
         documentList2={documentList2}
+      />
+      <CostsAndFeesList 
+        costsList={costsList}
       />
     </Service>
   )
 }
 
-export default Accounting;
+export default Mfc;
 
 export const pageQuery = graphql`
-  query Accounting2 {
-    allStrapiAccountings {
+  query MfcQuery {
+    allStrapiMfcs {
       edges {
         node {
           documentList1 {
@@ -59,14 +59,11 @@ export const pageQuery = graphql`
             type
           }
           h2
-          h3_1
-          h3_2
+          h3
           info
           p
-          subservices {
-            about
-            h3
-            p
+          costsList {
+            name
             price
           }
         }

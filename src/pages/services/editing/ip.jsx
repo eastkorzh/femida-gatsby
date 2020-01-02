@@ -3,21 +3,19 @@ import React from 'react';
 import Service from '../service';
 import NavRouter from 'src/components/navRoutes';
 import About from "src/components/about";
-import Info from 'src/components/info';
+//import Info from 'src/components/info';
 import Documents from 'src/components/documents';
 import CostsAndFeesList from 'src/components/costsAndFeesList';
-//import Roadmap from 'src/components/roadmap';
 import { graphql } from "gatsby";
 
-const BuySales = ({ data, location }) => {
+const Editing = ({ data, location }) => {
   const { 
     h2,
     p,
-    info,
-    documentList,
+    //about,
     costsList,
-    feesList,
-  } = data.allStrapiBuysales.edges[0].node;
+    documentList,
+  } = data.allStrapiEditings.edges[1].node;
 
   return (
     <Service location={location}>
@@ -25,39 +23,32 @@ const BuySales = ({ data, location }) => {
       <About 
         h2={h2}
         p={p}
-        imgName='newContract' 
-        documentList={documentList}
+        imgName='editing' 
         costsList={costsList}
+        documentList={documentList}
       />
-      <Info>
-        <div dangerouslySetInnerHTML={{ __html: info}} />
-      </Info>
+      {/* <Info>
+        <div dangerouslySetInnerHTML={{ __html: (info)}} />
+      </Info>       */}
       <Documents 
         documentList={documentList}
       />
       <CostsAndFeesList 
         costsList={costsList}
-        feesList={feesList}
       />
     </Service>
   )
 }
 
-export default BuySales;
+export default Editing;
 
 export const pageQuery = graphql`
-  query buySalesQuery {
-    allStrapiBuysales {
+  query editingQuery1 {
+    allStrapiEditings {
       edges {
         node {
-          h2
-          p
-          info
+          about
           costsList {
-            name
-            price
-          }
-          feesList {
             name
             price
           }
@@ -65,6 +56,8 @@ export const pageQuery = graphql`
             name
             type
           }
+          h2
+          p
         }
       }
     }

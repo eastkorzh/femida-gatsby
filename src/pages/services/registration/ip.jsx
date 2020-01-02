@@ -6,18 +6,19 @@ import About from "src/components/about";
 import Info from 'src/components/info';
 import Documents from 'src/components/documents';
 import CostsAndFeesList from 'src/components/costsAndFeesList';
-//import Roadmap from 'src/components/roadmap';
 import { graphql } from "gatsby";
 
-const BuySales = ({ data, location }) => {
+const Registration = ({ data, location }) => {
   const { 
     h2,
-    p,
     info,
-    documentList,
+    p,
+    //about,
+    docH3_1,
     costsList,
     feesList,
-  } = data.allStrapiBuysales.edges[0].node;
+    documentList,
+  } = data.allStrapiRegistrations.edges[1].node;
 
   return (
     <Service location={location}>
@@ -25,39 +26,41 @@ const BuySales = ({ data, location }) => {
       <About 
         h2={h2}
         p={p}
-        imgName='newContract' 
-        documentList={documentList}
+        imgName='register' 
         costsList={costsList}
+        documentList={documentList}
       />
       <Info>
-        <div dangerouslySetInnerHTML={{ __html: info}} />
-      </Info>
+        <div dangerouslySetInnerHTML={{ __html: (info)}} />
+      </Info>      
       <Documents 
+        h4={docH3_1}
         documentList={documentList}
       />
+      {/* <Documents 
+        h4={docH3_2}
+        documentList={documentList2}
+        disableH3={true}
+      /> */}
       <CostsAndFeesList 
         costsList={costsList}
         feesList={feesList}
+        disableH3={true}
       />
     </Service>
   )
 }
 
-export default BuySales;
+export default Registration;
 
 export const pageQuery = graphql`
-  query buySalesQuery {
-    allStrapiBuysales {
+  query registerationQuery1 {
+    allStrapiRegistrations {
       edges {
         node {
-          h2
-          p
-          info
+          about
+          docH3_1
           costsList {
-            name
-            price
-          }
-          feesList {
             name
             price
           }
@@ -65,6 +68,13 @@ export const pageQuery = graphql`
             name
             type
           }
+          feesList {
+            name
+            price
+          }
+          h2
+          info
+          p
         }
       }
     }

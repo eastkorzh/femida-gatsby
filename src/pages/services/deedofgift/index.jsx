@@ -7,6 +7,7 @@ import Info from 'src/components/info';
 import Documents from 'src/components/documents';
 import CostsAndFeesList from 'src/components/costsAndFeesList';
 import Roadmap from 'src/components/roadmap';
+import { graphql } from "gatsby";
 
 const DeedOfGift = ({ data, location }) => {
   const { 

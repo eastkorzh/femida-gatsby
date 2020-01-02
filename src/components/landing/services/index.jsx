@@ -21,18 +21,33 @@ const Services = () => {
           <img src={require('src/img/icons/3ndfl.png')} alt=""/>
           <div>Составление деклараций 3НДФЛ</div>
         </Link>
-        <Link className={s.link} to="/services/registerandliquidation">
+        <div className={s.link}>
           <img src={require('src/img/icons/register.png')} alt=""/>
-          <div>Регистрация компаний ООО и ИП</div>
-        </Link>
-        <Link className={s.link} to="/services/registerandliquidation">
-          <img src={require('src/img/icons/liqidation.png')} alt=""/>
-          <div>Ликвидация компаний ООО и ИП</div>
-        </Link>
-        <Link className={s.link} to="/services/registerandliquidation">
+          <div className={s.text}>Регистрация компаний ООО и ИП</div>
+          <div className={s.info}>
+            <div className={s.infoHeader}>Регистрация <br /> компаний</div>
+            <Link to='/services/registration/ooo'>• Регистрация ООО</Link>
+            <Link to='/services/registration/ip'>• Регистрация ИП</Link>
+          </div>
+        </div>
+        <div className={s.link}>
+          <img src={require('src/img/icons/liquidation.png')} alt=""/>
+          <div className={s.text}>Ликвидация компаний ООО и ИП</div>
+          <div className={s.info}>
+            <div className={s.infoHeader}>Регистрация <br /> компаний</div>
+            <Link to='/services/liquidation/ooo'>• Ликвидация ООО</Link>
+            <Link to='/services/liquidation/ip'>• Ликвидация ИП</Link>
+          </div>
+        </div>
+        <div className={s.link}>
           <img src={require('src/img/icons/editing.png')} alt=""/>
-          <div>Внесение изменений в организации</div>
-        </Link>
+          <div className={s.text}>Внесение изменений в организации</div>
+          <div className={s.info}>
+            <div className={s.infoHeader}>Внесение <br /> изменений</div>
+            <Link to='/services/editing/ooo'>• В ООО</Link>
+            <Link to='/services/editing/ip'>• В ИП</Link>
+          </div>
+        </div>
         <Link className={s.link} to="/services/court">
           <img src={require('src/img/icons/representation.png')} alt=""/>
           <div>Представительство в судах</div>
@@ -56,10 +71,16 @@ const Services = () => {
             <Link to='/services/accounting/envd'>• Декларация ЕНВД</Link>
           </div>
         </div>
-        <Link className={s.link} to="/services/mfc">
+        <div className={s.link}>
           <img src={require('src/img/icons/mfc.png')} alt=""/>
-          <div>Заполнение заявлений для подчи в МФЦ</div>
-        </Link>
+          <div className={s.text}>Заполнение заявлений для подчи в МФЦ</div>
+          <div className={s.info}>
+            <div className={s.infoHeader}>Заполнение заявлений для подчи в МФЦ</div>
+            <Link to='/services/mfc/inn'>• ИНН</Link>
+            <Link to='/services/mfc/migration'>• Постановка на миграционный учет</Link>
+            <Link to='/services/mfc/passport'>• Оформление загранпаспорта</Link>
+          </div>
+        </div>
       </div>
     </section>
   )

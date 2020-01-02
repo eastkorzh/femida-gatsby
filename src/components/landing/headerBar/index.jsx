@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Transition } from 'react-transition-group';
 import { Link } from 'gatsby';
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby";
 
 import scrollTo from 'src/utils/scrollTo';
 import s from './styles.module.scss';

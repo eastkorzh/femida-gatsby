@@ -3,21 +3,19 @@ import React from 'react';
 import Service from '../service';
 import NavRouter from 'src/components/navRoutes';
 import About from "src/components/about";
-import Info from 'src/components/info';
+//import Info from 'src/components/info';
 import Documents from 'src/components/documents';
 import CostsAndFeesList from 'src/components/costsAndFeesList';
-//import Roadmap from 'src/components/roadmap';
+import { graphql } from "gatsby";
 
-const Mfc = ({ data, location }) => {
-  const {
-    documentList1,
-    documentList2,
+const Editing = ({ data, location }) => {
+  const { 
     h2,
-    h3,
-    info,
     p,
+    //about,
     costsList,
-  } = data.allStrapiMfcs.edges[0].node;
+    documentList,
+  } = data.allStrapiEditings.edges[0].node;
 
   return (
     <Service location={location}>
@@ -25,15 +23,15 @@ const Mfc = ({ data, location }) => {
       <About 
         h2={h2}
         p={p}
-        imgName='mfc' 
-        documentList={documentList1}
+        imgName='editing' 
+        costsList={costsList}
+        documentList={documentList}
       />
-      <Info>
-        <div dangerouslySetInnerHTML={{ __html: info}} />
-      </Info>
-      <Documents
-        documentList={documentList1}
-        documentList2={documentList2}
+      {/* <Info>
+        <div dangerouslySetInnerHTML={{ __html: (info)}} />
+      </Info>       */}
+      <Documents 
+        documentList={documentList}
       />
       <CostsAndFeesList 
         costsList={costsList}
@@ -42,29 +40,24 @@ const Mfc = ({ data, location }) => {
   )
 }
 
-export default Mfc;
+export default Editing;
 
 export const pageQuery = graphql`
-  query MfcQuery {
-    allStrapiMfcs {
+  query editingQuery {
+    allStrapiEditings {
       edges {
         node {
-          documentList1 {
-            name
-            type
-          }
-          documentList2 {
-            name
-            type
-          }
-          h2
-          h3
-          info
-          p
+          about
           costsList {
             name
             price
           }
+          documentList {
+            name
+            type
+          }
+          h2
+          p
         }
       }
     }

@@ -8,11 +8,14 @@ const Documents = (props) => {
     documentsDelimiter,
     documentList2,
     h4,
+    disableH3,
    } = props;
 
   return (
-    <div id='documentList' className={s.container}>
-      <h3>Список необходимых документов</h3>
+    <div id='documentList' className={s.container} style={disableH3 ? { marginTop: '0'} : {}}>
+      {!disableH3 && 
+        <h3>Список необходимых документов</h3>
+      }
       <div className={s.documentsDelimiter}>{h4}</div>
       <div className={s.documentList}>
         {documentList && documentList.map((item, index) => {

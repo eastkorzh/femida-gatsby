@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import HeaderBar from 'src/components/landing/headerBar';
 import ServiceForm from 'src/components/serviceForm';

@@ -43,7 +43,9 @@ module.exports = {
           `buysales`,
           `claims`,
           `mfcs`,
-          `registerandliquidation`,
+          `registrations`,
+          `liquidations`,
+          `editings`,
         ],
         // Possibility to login with a strapi user, when content types are not publically available (optional).
         loginData: {
