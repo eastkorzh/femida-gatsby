@@ -3,11 +3,16 @@ import React from 'react';
 import s from './styles.module.scss';
 
 const Roadmap = (props) => {
-  const { h3, stepsList } = props;
+  const { h3, stepsList, h3After} = props;
 
   return (
     <div className={s.container}>
-      <h3>{h3}</h3>
+      {h3 &&
+        <h3>{h3}</h3>
+      }
+      {h3After &&
+        <div className={s.h3After}>{h3After}</div>
+      }
       <div className={s.steps}>
         {stepsList.map((item, index) => {
           return (

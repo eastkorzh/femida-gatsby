@@ -5,6 +5,10 @@
 	align-items: center;
 	margin-bottom: 40px;
 	.toggle {
+		border: 2px solid #E6B980;
+		border-radius: 30px;
+		padding: 10px 20px;
+		cursor: pointer;
 		display: flex;
 		align-items: center;
 		.imgWrapper {

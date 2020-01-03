@@ -46,6 +46,7 @@ module.exports = {
           `registrations`,
           `liquidations`,
           `editings`,
+          `subscribes`,
         ],
         // Possibility to login with a strapi user, when content types are not publically available (optional).
         loginData: {

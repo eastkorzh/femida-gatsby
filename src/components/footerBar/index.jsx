@@ -6,7 +6,7 @@ const FooterBar = () => {
   return (
     <div className={s.bottom}>
       <div className={s.content}>
-        <div>© Юридический центр “Фемида”, 2019</div>
+      <div>© Юридический центр “Фемида”, {new Date().getFullYear()}</div>
         <div>Создание сайтов</div>
       </div>
     </div>

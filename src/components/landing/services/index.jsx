@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import cx from 'classnames';
 
 import s from './styles.module.scss';
 
@@ -74,11 +75,14 @@ const Services = () => {
         <div className={s.link}>
           <img src={require('src/img/icons/mfc.png')} alt=""/>
           <div className={s.text}>Заполнение заявлений для подчи в МФЦ</div>
-          <div className={s.info}>
+          <div className={cx([s.info], [s.info2])}>
             <div className={s.infoHeader}>Заполнение заявлений для подчи в МФЦ</div>
-            <Link to='/services/mfc/inn'>• ИНН</Link>
+            <Link to='/services/mfc/inn'>• Оформление ИНН</Link>
             <Link to='/services/mfc/migration'>• Постановка на миграционный учет</Link>
             <Link to='/services/mfc/passport'>• Оформление загранпаспорта</Link>
+            <Link to='/services/registration/ooo'>• Регистрация ООО</Link>
+            <Link to='/services/registration/ip'>• Регистрация ИП</Link>
+            <Link to='/services/ndfl'>• Составление деклараций 3НДФЛ</Link>
           </div>
         </div>
       </div>
