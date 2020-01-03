@@ -25,10 +25,10 @@ const Subscribe = ({ data, location }) => {
         imgName='subscribe' 
         costsList={costsList}
       />
+      <Roadmap h3={h3} h3After={h3_after} stepsList={stepsList} />
       <CostsAndFeesList 
         costsList={costsList}
       />
-      <Roadmap h3={h3} h3After={h3_after} stepsList={stepsList} />
     </Service>
   )
 }

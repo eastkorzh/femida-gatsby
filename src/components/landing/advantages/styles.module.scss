@@ -95,3 +95,28 @@
     }
   }
 }
+
+@media screen and (max-width: 380px) {
+  .section {
+    .container {
+      .text {
+        h2 {
+          margin-top: 20px;
+          font-size: 26px;
+        }
+        div {
+          margin-top: 30px;
+        }
+      }
+      .imgWrapper {
+        margin-top: 35px;
+      }
+    }
+    .timer {
+      height: 350px;
+      width: auto;
+      left: calc(50% - 252px);
+      top: calc(50% - 220px);
+    }
+  }
+}

@@ -9,7 +9,7 @@
     transition: color 500ms;
   }
   .info {
-    width: 200px;
+    width: 175px;
     z-index: -1;
     margin-top: 0 !important;
     height: 100%;
@@ -51,6 +51,7 @@
   }
   .info2 {
     transform: translateY(45px);
-    height: 250px;
+    height: 290px;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255, .95) 90%, rgba(255,255,255, .3) 100%);
   }
 }

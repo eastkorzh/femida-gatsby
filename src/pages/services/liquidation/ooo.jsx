@@ -21,7 +21,7 @@ const Liquidation = ({ data, location }) => {
     costsList,
     feesList,
     documentList,
-    documentList2,
+    documentList1,
   } = data.allStrapiLiquidations.edges[0].node;
 
   return (
@@ -44,7 +44,7 @@ const Liquidation = ({ data, location }) => {
       />
       <Documents 
         h4={docH3_2}
-        documentList={documentList2}
+        documentList={documentList1}
         disableH3={true}
       />
       <CostsAndFeesList 
