@@ -6,13 +6,15 @@ import About from "src/components/about";
 //import Info from 'src/components/info';
 import Documents from 'src/components/documents';
 import CostsAndFeesList from 'src/components/costsAndFeesList';
+import ExtendedAbout from 'src/components/extendedAbout';
+
 import { graphql } from "gatsby";
 
 const Editing = ({ data, location }) => {
   const { 
     h2,
     p,
-    //about,
+    about,
     costsList,
     documentList,
   } = data.allStrapiEditings.edges[1].node;
@@ -27,6 +29,9 @@ const Editing = ({ data, location }) => {
         costsList={costsList}
         documentList={documentList}
       />
+      {about && 
+        <ExtendedAbout about={about} />
+      }
       {/* <Info>
         <div dangerouslySetInnerHTML={{ __html: (info)}} />
       </Info>       */}

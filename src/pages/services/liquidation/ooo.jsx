@@ -6,6 +6,8 @@ import About from "src/components/about";
 import Info from 'src/components/info';
 import Documents from 'src/components/documents';
 import CostsAndFeesList from 'src/components/costsAndFeesList';
+import ExtendedAbout from 'src/components/extendedAbout';
+
 import { graphql } from "gatsby";
 
 const Liquidation = ({ data, location }) => {
@@ -13,7 +15,7 @@ const Liquidation = ({ data, location }) => {
     h2,
     info,
     p,
-    //about,
+    about,
     docH3_1,
     docH3_2,
     costsList,
@@ -32,6 +34,7 @@ const Liquidation = ({ data, location }) => {
         costsList={costsList}
         documentList={documentList}
       />
+      <ExtendedAbout about={about} />
       <Info>
         <div dangerouslySetInnerHTML={{ __html: (info)}} />
       </Info>      

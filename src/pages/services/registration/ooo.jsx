@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from "gatsby";
 
 import Service from '../service';
 import NavRouter from 'src/components/navRoutes';
@@ -6,14 +7,14 @@ import About from "src/components/about";
 import Info from 'src/components/info';
 import Documents from 'src/components/documents';
 import CostsAndFeesList from 'src/components/costsAndFeesList';
-import { graphql } from "gatsby";
+import ExtendedAbout from 'src/components/extendedAbout';
 
 const Registration = ({ data, location }) => {
   const { 
     h2,
     info,
     p,
-    //about,
+    about,
     docH3_1,
     docH3_2,
     docH3_3,
@@ -36,6 +37,7 @@ const Registration = ({ data, location }) => {
         costsList={costsList}
         documentList={documentList}
       />
+      <ExtendedAbout about={about} />
       <Info>
         <div dangerouslySetInnerHTML={{ __html: (info)}} />
       </Info>      
