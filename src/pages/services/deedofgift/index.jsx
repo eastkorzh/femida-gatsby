@@ -17,7 +17,6 @@ const DeedOfGift = ({ data, location }) => {
     documentList,
     documentList2,
     costsList,
-    feesList,
     documentsDelimiter,
     h3,
     stepsList,
@@ -42,7 +41,6 @@ const DeedOfGift = ({ data, location }) => {
       />
       <CostsAndFeesList 
         costsList={costsList}
-        feesList={feesList}
       />
       <Roadmap h3={h3} stepsList={stepsList} />
     </Service>
@@ -72,10 +70,6 @@ export const pageQuery = graphql`
             name
             price
             oldPrice
-          }
-          feesList {
-            name
-            price
           }
           h3
           stepsList {

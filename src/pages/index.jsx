@@ -24,20 +24,6 @@ const Landing = ({ data, location }) => {
     address,
   } = data.allStrapiLandings.edges[0].node;
 
-  useEffect(() => {
-    if (location.action !=='PUSH') return;
-    const state = location.state;
-    
-    if (state && state.scrollTo) {
-      const topp = document.getElementById(state.scrollTo).offsetTop;
-      
-      //setTimout prevent autoumatic scroll top provided by Gatsby
-      setTimeout(() => {
-        window.scrollTo({ top: topp - 50})
-      }, 1)
-    }
-  }, [location.state])
-
   return (
     <>
       <Helmet>
