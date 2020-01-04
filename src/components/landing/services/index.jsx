@@ -14,11 +14,12 @@ const Services = () => {
       <div className={s.grid}>
         <div className={s.link}>
           <img src={require('src/img/icons/newContract.png')} alt=""/>
-          <div>Составление договоров</div>
+          <div className={s.text}>Составление договоров</div>
           <div className={s.info}>
             <div className={s.infoHeader}>Составление <br /> договоров</div>
             <Link to='/services/deedofgift'>• Дарения</Link>
             <Link to='/services/buysales'>• Купли-продажи</Link>
+            <Link to='/services/rent'>• Аренды</Link>
           </div>
         </div>
         <Link className={s.link} to="/services/ndfl">

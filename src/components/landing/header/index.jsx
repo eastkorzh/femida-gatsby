@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Img from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby"
 import useStoreon from 'storeon/react';
+import { Transition } from 'react-transition-group';
 
 import HeaderBar from '../headerBar';
 import Button from 'src/components/ui/Button';
@@ -30,6 +31,22 @@ const Header = ({ h1, h2, location }) => {
     }
   }, [throttledHandleScroll]);
 
+  const duration = 300;
+
+  const defaultStyle = {
+    transition: `opacity ${duration}ms ease-in-out`,
+    opacity: 0,
+  }
+
+  const transitionStyles = {
+    entering: { 
+      opacity: 1,
+    },
+    entered: { 
+      opacity: 1,
+    },
+  };
+
   const img = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "femida.png" }) {
@@ -47,11 +64,27 @@ const Header = ({ h1, h2, location }) => {
       <Modal />
       <div className={s.container}>
         <HeaderBar location={location} />
-        {!isNear &&
-          <div className={s.fixedMenu}>
-            <HeaderBar location={location} fixed={true}/>
-          </div>
-        }
+        
+        <Transition 
+          in={!isNear} 
+          onEnter={node => node.offsetHeight} 
+          timeout={duration} 
+          mountOnEnter={true} 
+          unmountOnExit={true} 
+        >
+          {state => (
+            <div 
+              className={s.fixedMenu}
+              style={{
+                ...defaultStyle,
+                ...transitionStyles[state]
+              }}
+            >
+              <HeaderBar location={location} fixed={true}/>
+            </div>
+          )}
+        </Transition>
+
         <div className={s.content}>
           <div className={s.left}>
             <h1>{h1}</h1>
