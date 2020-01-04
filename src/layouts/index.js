@@ -1,50 +1,81 @@
-import React from "react"
+import React from "react";
 import {
   TransitionGroup,
   Transition as ReactTransition,
-} from "react-transition-group"
+} from "react-transition-group";
+import useStoreon from 'storeon/react';
 
-const timeout = 200
-const getTransitionStyles = {
-  entering: {
-    position: `absolute`,
-    opacity: 0,
-  },
-  entered: {
-    transition: `opacity ${timeout}ms ease-in`,
-    opacity: 1,
-  },
-  exiting: {
-    transition: `opacity ${timeout}ms ease-in`,
-    opacity: 0,
-  },
-}
+const Layout = (props) => {
+  const { children, location } = props;
 
-class Layout extends React.PureComponent {
-  render() {
-    const { children, location } = this.props
-    return (
-      <TransitionGroup>
-        <ReactTransition
-          key={location.pathname}
-          timeout={{
-            enter: timeout,
-            exit: timeout,
-          }}
-        >
-          {status => (
-            <div
-              style={{
-                ...getTransitionStyles[status],
-              }}
-            >
-              {children}
-            </div>
-          )}
-        </ReactTransition>
-      </TransitionGroup>
-    )
+  const { dispatch, isFromRoot } = useStoreon('isFromRoot');
+  
+  const timeout = 200
+  const getTransitionStyles = {
+    entering: {
+      position: `absolute`,
+      opacity: 0,
+      transform: 'translateX(100px)',
+    },
+    entered: {
+      transition: `all ${timeout}ms ease-out`,
+      opacity: 1,
+    },
+    exiting: {
+      transition: `all ${timeout}ms ease-out`,
+      opacity: 0,
+      transform: 'translateX(-50px)',
+    },
   }
+
+  const reverse = {
+    entering: {
+      position: `absolute`,
+      opacity: 0,
+      transform: 'translateX(-50px)',
+    },
+    entered: {
+      transition: `all ${timeout}ms ease-out`,
+      opacity: 1,
+    },
+    exiting: {
+      transition: `all ${timeout}ms ease-out`,
+      opacity: 0,
+      transform: 'translateX(100px)',
+    },
+  }
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      dispatch('setDefault')
+    }, 500)
+  }, [isFromRoot])
+
+  return (
+    <TransitionGroup>
+      <ReactTransition
+        key={location.pathname}
+        timeout={{
+          enter: timeout,
+          exit: timeout,
+        }}
+      >
+        {status => {
+          return (
+          <div
+            style={(isFromRoot) ? {
+              ...getTransitionStyles[status],
+            } : {
+              ...reverse[status]
+            }   
+          }
+          >
+            {children}
+          </div>
+        )}}
+      </ReactTransition>
+    </TransitionGroup>
+  )
 }
 
 export default Layout

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 import Form from 'src/components/form';
 
@@ -6,12 +6,6 @@ import s from './styles.module.scss';
 
 const Footer = (props) => {
   const { phone, email, address } = props;
-  
-  const [ isMount, setMount ] = useState(false);
-
-  useEffect(() => {
-    setMount(true);
-  }, []);
 
   return (
     <footer id="contacts" className={s.footer}>
@@ -81,25 +75,23 @@ const Footer = (props) => {
         </div>
         <div className={s.right}>
           <div>Мы здесь:</div>
-          <div>ПН-ВС 10:00-19:00</div>
-          {isMount &&       
-            <YMaps>
-              <div style={{borderRadius: '7px', overflow: 'hidden'}}>
-                <Map
-                  style={{
-                    width: '100%',
-                    height: '310px',
-                  }}
-                  defaultState={{
-                    center: [60.04894, 30.443461],
-                    zoom: 17,
-                  }}
-                >
-                  <Placemark geometry={[60.048490, 30.443727]} />
-                </Map>
-              </div>
-            </YMaps>
-          }
+          <div>ПН-ВС 10:00-19:00</div>     
+          <YMaps>
+            <div style={{borderRadius: '7px', overflow: 'hidden'}}>
+              <Map
+                style={{
+                  width: '100%',
+                  height: '310px',
+                }}
+                defaultState={{
+                  center: [60.04894, 30.443461],
+                  zoom: 17,
+                }}
+              >
+                <Placemark geometry={[60.048490, 30.443727]} />
+              </Map>
+            </div>
+          </YMaps>
         </div>
       </div>
     </footer>

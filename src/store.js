@@ -31,10 +31,17 @@ let isModalOpen = store => {
   store.on('setModalClose', ({ isModalOpen }, info) => ({ isModalOpen: false, info }))
 }
 
+let isFromRoot = store => {
+  store.on('@init', () => ({ isFromRoot: false }))
+  store.on('setFromRoot', ({ isFromRoot }) => ({ isFromRoot: true}))
+  store.on('setDefault', ({ isFromRoot }) => ({ isFromRoot: false }))
+}
+
 const store = createStore([
   increment, 
   isSuccess,
   isModalOpen,
+  isFromRoot,
   process.env.NODE_ENV !== 'production' && require('storeon/devtools/logger'),
 ]);
 
