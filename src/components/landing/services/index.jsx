@@ -9,7 +9,15 @@ const Services = () => {
   const { dispatch } = useStoreon();
 
   return (
-    <section id="services" className={s.section} onClick={() => dispatch('setFromRoot')}>
+    <section 
+      id="services" 
+      className={s.section} 
+      onClick={(e) => {
+        if (e.target.tagName === 'A' || e.target.parentNode.tagName === 'A') {
+          dispatch('setFromRoot')
+        }
+      }}
+    >
       <h2>Наши услуги</h2>
       <div className={s.grid}>
         <div className={s.link}>
@@ -22,10 +30,18 @@ const Services = () => {
             <Link to='/services/rent'>• Аренды</Link>
           </div>
         </div>
-        <Link className={s.link} to="/services/ndfl">
+        <div className={s.link}>
           <img src={require('src/img/icons/3ndfl.png')} alt=""/>
-          <div>Составление деклараций 3НДФЛ</div>
-        </Link>
+          <div className={s.text}>Составление деклараций 3НДФЛ</div>
+          <div className={cx([s.info], [s.info2])}>
+            <div className={s.infoHeader}>Налоговый вычет</div>
+            <Link to='/services/ndfl/realestate'>• При покупке недвижимости</Link>
+            <Link to='/services/ndfl/mortgage'>• На проценты по ипотеке</Link>
+            <Link to='/services/ndfl/study'>• На обучение</Link>
+            <Link to='/services/ndfl/cure'>• На лечение и приобретение медикаментов</Link>
+            <Link to='/services/ndfl/sale'>• Декларация после продажи имущества</Link>
+          </div>
+        </div>
         <div className={s.link}>
           <img src={require('src/img/icons/register.png')} alt=""/>
           <div className={s.text}>Регистрация компаний ООО и ИП</div>

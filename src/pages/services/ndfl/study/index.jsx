@@ -1,23 +1,23 @@
 import React from 'react';
+import { graphql } from "gatsby";
 
-import Service from '../service';
+import Service from '../../service';
 import NavRouter from 'src/components/navRoutes';
 import About from "src/components/about";
 import Info from 'src/components/info';
-//import Documents from 'src/components/documents';
+import Documents from 'src/components/documents';
 import CostsAndFeesList from 'src/components/costsAndFeesList';
-import Roadmap from 'src/components/roadmap';
-import { graphql } from "gatsby";
+//import Roadmap from 'src/components/roadmap';
 
-const Ndfl = ({ data, location }) => {
+
+const Study = ({ data, location }) => {
   const { 
     costsList,
     h2,
-    h3,
     info,
     p,
-    stepsList,
-  } = data.allStrapiNdfls.edges[0].node;
+    documentList,
+  } = data.allStrapiNdfls.edges[3].node;
 
   return (
     <Service location={location}>
@@ -31,8 +31,8 @@ const Ndfl = ({ data, location }) => {
       <Info>
         <div dangerouslySetInnerHTML={{ __html: (info)}} />
       </Info>
-      <Roadmap h3={h3} stepsList={stepsList} />
-      {/* <Documents data={data} /> */}
+      {/* <Roadmap h3={h3} stepsList={stepsList} /> */}
+      <Documents documentList={documentList} />
       <CostsAndFeesList 
         costsList={costsList}
       />
@@ -40,10 +40,10 @@ const Ndfl = ({ data, location }) => {
   )
 }
 
-export default Ndfl;
+export default Study;
 
 export const pageQuery = graphql`
-  query ndflQuery {
+  query studyQuery {
     allStrapiNdfls {
       edges {
         node {
@@ -55,7 +55,7 @@ export const pageQuery = graphql`
           h3
           info
           p
-          stepsList {
+          documentList {
             name
           }
         }
