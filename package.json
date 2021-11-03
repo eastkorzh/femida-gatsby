@@ -27,7 +27,7 @@
     "react-transition-group": "^4.3.0",
     "react-yandex-maps": "^4.2.0",
     "storeon": "^0.9.7",
-    "validator": "^12.1.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "gatsby-plugin-root-import": "^2.0.5",
